@@ -17,7 +17,7 @@ completa em CSV.
 
 ## Fonte dos dados
 
-Ver aba "Sobre e metodologia" dentro do aplicativo.
+Ver aba "Sobre a metodologia" dentro do aplicativo.
 
 ## Reprodução local
 
@@ -60,7 +60,7 @@ shiny::runApp()
 ├── scripts/
 │   └── prepare_data.R     # pipeline de limpeza: xlsx -> csv
 ├── www/
-│   ├── sobre.md            # conteúdo da aba "Sobre e metodologia"
+│   ├── sobre.md            # conteúdo da aba "Sobre a metodologia"
 │   ├── styles.css          # identidade visual
 │   └── fonts/              # Libre Franklin e Source Serif 4 (.woff2, locais)
 ├── LICENSE
@@ -91,9 +91,9 @@ alterado.
   processo de classificação do corpus, não do trabalho em si. Por padrão ficam
   ocultas na tabela; `confianca` e `origem` podem ser exibidas via checkbox na
   interface. `justificativa` e `lote` não são exibidas na UI atual.
-- Nenhum corte por `confianca` foi aplicado: os 420 registros da aba "Corpus
-  unificado v1" foram tratados como a amostra final. Se isso não corresponder à
-  intenção do projeto, é preciso decidir um limiar e reprocessar.
+- Limiar de `confianca` para inclusão no corpus: nota 5 ou maior (ver aba "Sobre a
+  metodologia" no app). Os 420 registros da aba "Corpus unificado v1" já respeitam
+  esse limiar; nenhum corte adicional é aplicado pelo app.
 
 ## Identidade visual
 
@@ -122,4 +122,4 @@ lateral, tipografia e o modal de detalhe conferidos visualmente.
 
 ## Como citar
 
-Ver aba "Sobre e metodologia" dentro do aplicativo.
+Ver aba "Sobre a metodologia" dentro do aplicativo.

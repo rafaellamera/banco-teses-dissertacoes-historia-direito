@@ -8,7 +8,7 @@
 #   Rscript scripts/prepare_data.R
 #
 # Transformacoes aplicadas (documentadas para fins de transparencia
-# metodologica, ver aba "Sobre e metodologia" no app):
+# metodologica, ver aba "Sobre a metodologia" no app):
 #   1. remove espacos em branco nas bordas de todas as colunas de texto
 #   2. padroniza nome_programa para caixa alta (unifica "Direito" e "DIREITO")
 #   3. padroniza idioma para "Portugues"/"Ingles", ignorando acentuacao e caixa

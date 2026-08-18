@@ -81,7 +81,7 @@ busca_ui <- function(id) {
         DTOutput(ns("tabela"))
       ),
       nav_panel(
-        "Sobre e metodologia",
+        "Sobre a metodologia",
         div(class = "abd-article", includeMarkdown("www/sobre.md"))
       )
     )
