@@ -18,7 +18,12 @@ ui <- page_fluid(
         "&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
       )
     ),
-    tags$link(rel = "stylesheet", href = "styles.css")
+    tags$link(rel = "stylesheet", href = "styles.css"),
+    tags$script(HTML(
+      "Shiny.addCustomMessageHandler('abrirMailto', function(url) {
+         window.location.href = url;
+       });"
+    ))
   ),
 
   div(
@@ -31,6 +36,12 @@ ui <- page_fluid(
       p(class = "abd-subtitle",
         sprintf("1994-2024 · %d registros de mestrado e doutorado em Programas de Pós-Graduação em Direito no Brasil", n_total)),
       p(class = "abd-byline", "Rafael Lamera Giesta Cabral · UFERSA")
+    ),
+
+    div(
+      class = "abd-callout",
+      span(class = "abd-callout-text", "Sua tese ou dissertação não está neste banco? "),
+      actionLink("abrir_contribuicao", "Fale conosco.", class = "abd-callout-link")
     ),
 
     layout_sidebar(
@@ -113,6 +124,23 @@ ui <- page_fluid(
           "Sobre e metodologia",
           div(class = "abd-article", includeMarkdown("www/sobre.md"))
         )
+      )
+    ),
+
+    tags$footer(
+      class = "abd-footer",
+      p(
+        class = "abd-footer-line",
+        "Desenvolvido por Rafael Lamera Giesta Cabral · UFERSA · Código aberto · Projeto disponível no ",
+        tags$a(
+          href = "https://github.com/rafaellamera/banco-teses-historia-direito",
+          target = "_blank", rel = "noopener noreferrer",
+          "GitHub"
+        )
+      ),
+      p(
+        class = "abd-footer-line",
+        "Dados: Banco de Teses e Dissertações da CAPES. Última atualização: 17 de agosto de 2026."
       )
     )
   )

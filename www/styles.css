@@ -79,6 +79,30 @@ h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; }
   .abd-shell { padding: 0 1.1rem 2rem; }
 }
 
+/* --- Chamada "Fale conosco" ---------------------------------------------- */
+.abd-callout {
+  background-color: var(--abd-paper-alt);
+  border: 1px solid var(--abd-rule);
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.5rem;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.86rem;
+}
+
+.abd-callout-text {
+  color: var(--abd-ink-muted);
+}
+
+.abd-callout-link {
+  color: var(--abd-signal) !important;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.abd-form .form-group {
+  margin-bottom: 1rem;
+}
+
 /* --- Sidebar / filtros ------------------------------------------------- */
 .bslib-sidebar-layout > .sidebar,
 .bslib-sidebar-layout aside.sidebar,
@@ -305,6 +329,28 @@ table.dataTable td.dt-right { text-align: right; }
   float: left;
   padding-right: 0.35rem;
   padding-top: 0.15rem;
+  color: var(--abd-signal);
+}
+
+/* --- Rodape --------------------------------------------------------------- */
+.abd-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--abd-rule);
+}
+
+.abd-footer-line {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.76rem;
+  color: var(--abd-ink-muted);
+  margin-bottom: 0.3rem;
+}
+
+.abd-footer-line a {
+  color: var(--abd-ink-muted);
+  text-decoration: underline;
+}
+.abd-footer-line a:hover {
   color: var(--abd-signal);
 }
 
