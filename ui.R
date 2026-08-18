@@ -140,7 +140,7 @@ ui <- page_fluid(
       ),
       p(
         class = "abd-footer-line",
-        "Dados: Banco de Teses e Dissertações da CAPES. Última atualização: 17 de agosto de 2026."
+        "Dados: Banco de Teses e Dissertações da CAPES (1994-2024). Última atualização: 17 de agosto de 2026."
       )
     )
   )
