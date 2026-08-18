@@ -116,23 +116,30 @@ server <- function(input, output, session) {
     )
   })
 
-  # --- Detalhe do registro selecionado (estilo materia editorial) --------
-  output$detalhe <- renderUI({
+  # --- Detalhe do registro selecionado, em modal (estilo materia editorial)
+  observeEvent(input$tabela_rows_selected, {
     sel <- input$tabela_rows_selected
+    req(sel)
     df <- dados_filtrados()
-    if (is.null(sel) || nrow(df) == 0) return(NULL)
+    req(nrow(df) >= sel)
 
     reg <- df[sel, ]
 
-    div(
-      class = "abd-record",
-      div(class = "abd-record-kicker", paste(reg$ies, reg$nome_programa, sep = " \u00b7 ")),
-      h2(class = "abd-record-title", reg$titulo),
-      p(class = "abd-record-byline", sprintf("Por %s. Orientação de %s.", reg$autoria, reg$orientacao)),
-      p(class = "abd-record-dateline",
-        sprintf("%s \u00b7 %d \u00b7 %s (%s)", reg$tipo_normalizado, reg$ano_base, reg$uf, reg$regiao)),
-      p(class = "abd-record-body", reg$resumo)
-    )
+    showModal(modalDialog(
+      title = NULL,
+      size = "l",
+      easyClose = TRUE,
+      footer = modalButton("Fechar"),
+      div(
+        class = "abd-record",
+        div(class = "abd-record-kicker", paste(reg$ies, reg$nome_programa, sep = " · ")),
+        h2(class = "abd-record-title", reg$titulo),
+        p(class = "abd-record-byline", sprintf("Por %s. Orientação de %s.", reg$autoria, reg$orientacao)),
+        p(class = "abd-record-dateline",
+          sprintf("%s · %d · %s (%s)", reg$tipo_normalizado, reg$ano_base, reg$uf, reg$regiao)),
+        p(class = "abd-record-body", reg$resumo)
+      )
+    ))
   })
 
   # --- Downloads -----------------------------------------------------------

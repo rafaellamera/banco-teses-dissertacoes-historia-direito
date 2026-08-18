@@ -29,7 +29,8 @@ ui <- page_fluid(
       span(class = "abd-kicker", "Observatório dos Direitos Sociais do Semiárido · PPGD-UFERSA"),
       h1(class = "abd-title", "Banco de Teses e Dissertações em História do Direito"),
       p(class = "abd-subtitle",
-        sprintf("1994-2024 · %d registros de mestrado e doutorado em Programas de Pós-Graduação em Direito no Brasil", n_total))
+        sprintf("1994-2024 · %d registros de mestrado e doutorado em Programas de Pós-Graduação em Direito no Brasil", n_total)),
+      p(class = "abd-byline", "Rafael Lamera Giesta Cabral · UFERSA")
     ),
 
     layout_sidebar(
@@ -106,8 +107,7 @@ ui <- page_fluid(
         nav_panel(
           "Buscar",
           div(class = "abd-eyebrow", textOutput("contagem", inline = TRUE)),
-          DTOutput("tabela"),
-          uiOutput("detalhe")
+          DTOutput("tabela")
         ),
         nav_panel(
           "Sobre e metodologia",
