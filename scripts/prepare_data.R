@@ -23,7 +23,7 @@ library(dplyr)
 library(stringr)
 library(readr)
 
-caminho_origem <- "data-raw/4_trabalhos_historia_direito_1994_2024_classificados.xlsx"
+caminho_origem <- "data-raw/Base de dados consolidada 17ago.xlsx"
 caminho_saida  <- "data/corpus_historia_direito_1994_2024.csv"
 
 if (!file.exists(caminho_origem)) {

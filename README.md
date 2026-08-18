@@ -34,7 +34,7 @@ o repositório já inclui `data/corpus_historia_direito_1994_2024.csv` pronto):
 
 ```
 mkdir -p data-raw
-# copie a planilha original para data-raw/4_trabalhos_historia_direito_1994_2024_classificados.xlsx
+# copie a planilha original (aba "Corpus unificado v1") para data-raw/Base de dados consolidada 17ago.xlsx
 Rscript scripts/prepare_data.R
 ```
 
