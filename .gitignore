@@ -1,0 +1,14 @@
+# Dados brutos (planilha original, não versionada)
+data-raw/
+
+# Artefatos de sessão R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# macOS
+.DS_Store
+
+# Empacotamento local (não faz parte do código-fonte)
+banco-teses-historia-direito.zip

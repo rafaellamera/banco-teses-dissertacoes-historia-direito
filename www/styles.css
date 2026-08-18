@@ -1,0 +1,310 @@
+/* www/styles.css
+   Identidade editorial do Banco de Teses e Dissertações em História do Direito.
+   Paleta e tipografia documentadas no README, secao "Identidade visual".
+*/
+
+:root {
+  --abd-ink: #121212;
+  --abd-ink-muted: #5c5750;
+  --abd-paper: #fbfaf7;
+  --abd-paper-alt: #f1ede3;
+  --abd-rule: #d9d2c2;
+  --abd-signal: #9a2020;
+}
+
+/* --- Base ------------------------------------------------------------ */
+body {
+  background-color: var(--abd-paper);
+  color: var(--abd-ink);
+  font-family: "Libre Franklin", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--abd-signal);
+  outline-offset: 2px;
+}
+
+h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; }
+
+.abd-shell {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
+
+/* --- Masthead ---------------------------------------------------------- */
+.abd-masthead {
+  padding: 2rem 0 1.1rem;
+  border-bottom: 3px double var(--abd-rule);
+  margin-bottom: 1.5rem;
+}
+
+.abd-kicker {
+  display: block;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--abd-signal);
+  margin-bottom: 0.5rem;
+}
+
+.abd-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700;
+  font-size: 2.15rem;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--abd-ink);
+}
+
+.abd-subtitle {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.88rem;
+  color: var(--abd-ink-muted);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .abd-title { font-size: 1.6rem; }
+  .abd-shell { padding: 0 1.1rem 2rem; }
+}
+
+/* --- Sidebar / filtros ------------------------------------------------- */
+.bslib-sidebar-layout > .sidebar,
+.bslib-sidebar-layout aside.sidebar,
+aside.sidebar {
+  background-color: var(--abd-paper-alt) !important;
+  border-right: 1px solid var(--abd-rule) !important;
+}
+
+.abd-filter-group {
+  border-top: 1px solid var(--abd-rule);
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+.abd-filter-group:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.abd-filter-label {
+  display: block;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--abd-ink-muted);
+  margin-bottom: 0.55rem;
+}
+
+/* --- Formularios --------------------------------------------------------- */
+.form-control, .selectize-input {
+  border-radius: 0 !important;
+  border-color: var(--abd-rule) !important;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.86rem;
+}
+
+.form-control:focus, .selectize-input.focus {
+  border-color: var(--abd-ink) !important;
+  box-shadow: none !important;
+}
+
+.irs--shiny .irs-bar,
+.irs--shiny .irs-single,
+.irs--shiny .irs-from,
+.irs--shiny .irs-to {
+  background: var(--abd-ink) !important;
+  border-color: var(--abd-ink) !important;
+}
+
+/* --- Botoes ------------------------------------------------------------ */
+.btn {
+  border-radius: 0;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+}
+
+.btn-primary {
+  background-color: var(--abd-ink);
+  border-color: var(--abd-ink);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--abd-signal);
+  border-color: var(--abd-signal);
+}
+
+.btn-outline-primary, .btn-outline-secondary {
+  background-color: transparent;
+  color: var(--abd-ink);
+  border-color: var(--abd-ink);
+}
+.btn-outline-primary:hover, .btn-outline-secondary:hover {
+  background-color: var(--abd-ink);
+  color: var(--abd-paper);
+}
+
+/* --- Navegacao por abas -------------------------------------------------- */
+.nav-tabs {
+  border-bottom: 1px solid var(--abd-rule);
+}
+.nav-tabs .nav-link {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--abd-ink-muted);
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+}
+.nav-tabs .nav-link.active {
+  color: var(--abd-ink);
+  background-color: transparent;
+  border-bottom: 2px solid var(--abd-signal);
+}
+
+/* --- Contador de resultados --------------------------------------------- */
+.abd-eyebrow {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--abd-ink-muted);
+  border-bottom: 1px solid var(--abd-rule);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+/* --- Tabela (DT) --------------------------------------------------------- */
+table.dataTable {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.85rem;
+  border-collapse: collapse !important;
+}
+table.dataTable thead th {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--abd-ink-muted);
+  border-bottom: 2px solid var(--abd-ink) !important;
+  background-color: transparent !important;
+  padding-bottom: 0.6rem !important;
+}
+table.dataTable tbody tr {
+  background-color: transparent !important;
+}
+table.dataTable tbody td {
+  border-bottom: 1px solid var(--abd-rule) !important;
+  padding-top: 0.55rem !important;
+  padding-bottom: 0.55rem !important;
+}
+table.dataTable tbody tr:hover td {
+  background-color: var(--abd-paper-alt) !important;
+  cursor: pointer;
+}
+table.dataTable tbody tr.selected td {
+  background-color: #ece1d9 !important;
+}
+table.dataTable td.dt-right { text-align: right; }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.8rem;
+  border-radius: 0 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--abd-ink) !important;
+  color: var(--abd-paper) !important;
+  border-color: var(--abd-ink) !important;
+}
+
+/* --- Registro aberto (estilo materia) ------------------------------------- */
+.abd-record {
+  border-top: 3px solid var(--abd-ink);
+  padding-top: 1.4rem;
+  margin-top: 2.2rem;
+  max-width: 72ch;
+}
+
+.abd-record-kicker {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--abd-signal);
+  margin-bottom: 0.5rem;
+}
+
+.abd-record-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.22;
+  margin-bottom: 0.7rem;
+  color: var(--abd-ink);
+}
+
+.abd-record-byline {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.85rem;
+  color: var(--abd-ink-muted);
+  margin-bottom: 0.15rem;
+}
+
+.abd-record-dateline {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.78rem;
+  color: var(--abd-ink-muted);
+  letter-spacing: 0.02em;
+  padding-bottom: 1rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 1px solid var(--abd-rule);
+}
+
+.abd-record-body {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.06rem;
+  line-height: 1.62;
+  color: var(--abd-ink);
+}
+
+.abd-record-body::first-letter {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700;
+  font-size: 3.3rem;
+  line-height: 0.78;
+  float: left;
+  padding-right: 0.35rem;
+  padding-top: 0.15rem;
+  color: var(--abd-signal);
+}
+
+/* --- Aba "Sobre" --------------------------------------------------------- */
+.abd-article {
+  max-width: 72ch;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  padding-top: 1rem;
+}
+.abd-article h2 {
+  font-size: 1.3rem;
+  margin-top: 1.8rem;
+  border-bottom: 1px solid var(--abd-rule);
+  padding-bottom: 0.4rem;
+}
+.abd-article a { color: var(--abd-signal); }
