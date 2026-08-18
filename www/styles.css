@@ -37,6 +37,7 @@ h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; }
   padding: 2rem 0 1.1rem;
   border-bottom: 3px double var(--abd-rule);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .abd-kicker {
