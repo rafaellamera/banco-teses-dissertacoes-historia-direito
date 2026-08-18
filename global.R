@@ -31,3 +31,7 @@ lista_regiao    <- sort(unique(corpus$regiao))
 lista_uf        <- sort(unique(corpus$uf))
 
 n_total <- nrow(corpus)
+
+# --- Módulos -------------------------------------------------------------
+source("R/mod_busca.R")
+source("R/mod_contribuicao.R")

@@ -48,9 +48,12 @@ shiny::runApp()
 
 ```
 .
-├── global.R              # pacotes, leitura de dados, constantes
-├── ui.R                  # interface
-├── server.R              # lógica reativa
+├── global.R              # pacotes, leitura de dados, constantes, carrega os módulos
+├── ui.R                  # interface principal (masthead, módulos, rodapé)
+├── server.R              # inicializa os módulos
+├── R/
+│   ├── mod_busca.R        # módulo: filtros, tabela, detalhe em modal, downloads
+│   └── mod_contribuicao.R # módulo: formulário "Sua tese não está aqui?"
 ├── data/
 │   └── corpus_historia_direito_1994_2024.csv   # dado que o app efetivamente lê
 ├── data-raw/              # planilha original (não versionada, ver .gitignore)

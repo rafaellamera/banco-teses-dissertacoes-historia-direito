@@ -357,6 +357,23 @@ table.dataTable td.dt-right { text-align: right; }
   color: var(--abd-signal);
 }
 
+.abd-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  margin-top: 0.6rem;
+}
+
+.abd-footer-links a {
+  color: var(--abd-ink-muted);
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
+}
+
+.abd-footer-links a:hover {
+  color: var(--abd-signal);
+}
+
 /* --- Aba "Sobre" --------------------------------------------------------- */
 .abd-article {
   max-width: 72ch;

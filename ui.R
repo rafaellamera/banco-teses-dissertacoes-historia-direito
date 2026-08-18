@@ -18,12 +18,7 @@ ui <- page_fluid(
         "&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
       )
     ),
-    tags$link(rel = "stylesheet", href = "styles.css"),
-    tags$script(HTML(
-      "Shiny.addCustomMessageHandler('abrirMailto', function(url) {
-         window.location.href = url;
-       });"
-    ))
+    tags$link(rel = "stylesheet", href = "styles.css")
   ),
 
   div(
@@ -38,94 +33,9 @@ ui <- page_fluid(
       p(class = "abd-byline", "Rafael Lamera Giesta Cabral · UFERSA")
     ),
 
-    div(
-      class = "abd-callout",
-      span(class = "abd-callout-text", "Sua tese ou dissertação não está neste banco? "),
-      actionLink("abrir_contribuicao", "Fale conosco.", class = "abd-callout-link")
-    ),
+    contribuicao_ui("contribuicao"),
 
-    layout_sidebar(
-      sidebar = sidebar(
-        width = 320,
-        class = "abd-sidebar",
-
-        div(
-          class = "abd-filter-group",
-          span(class = "abd-filter-label", "Período"),
-          sliderInput(
-            "f_ano", NULL,
-            min = faixa_anos[1], max = faixa_anos[2],
-            value = faixa_anos, sep = "", step = 1
-          )
-        ),
-
-        div(
-          class = "abd-filter-group",
-          span(class = "abd-filter-label", "Tipo de pesquisa"),
-          checkboxGroupInput("f_tipo", NULL, choices = lista_tipo, selected = lista_tipo)
-        ),
-
-        div(
-          class = "abd-filter-group",
-          span(class = "abd-filter-label", "Instituição"),
-          selectizeInput(
-            "f_programa", "Programa de pós-graduação",
-            choices = lista_programas, multiple = TRUE,
-            options = list(placeholder = "Todos os programas")
-          ),
-          selectizeInput(
-            "f_ies", "IES",
-            choices = lista_ies, multiple = TRUE,
-            options = list(placeholder = "Todas as IES")
-          )
-        ),
-
-        div(
-          class = "abd-filter-group",
-          span(class = "abd-filter-label", "Localização"),
-          checkboxGroupInput("f_regiao", "Região", choices = lista_regiao, selected = lista_regiao),
-          selectizeInput(
-            "f_uf", "UF",
-            choices = lista_uf, multiple = TRUE,
-            options = list(placeholder = "Todas as UF")
-          )
-        ),
-
-        div(
-          class = "abd-filter-group",
-          span(class = "abd-filter-label", "Busca textual"),
-          textInput("f_titulo", "Título contém"),
-          textInput("f_autoria", "Autoria contém"),
-          textInput("f_orientacao", "Orientação contém"),
-          textInput("f_assunto", "Assunto (resumo e título)")
-        ),
-
-        div(
-          class = "abd-filter-group",
-          actionButton("limpar", "Limpar filtros", icon = icon("eraser"), class = "btn-outline-secondary w-100"),
-          br(), br(),
-          checkboxInput("mostrar_metadados", "Mostrar metadados de classificação", value = FALSE)
-        ),
-
-        div(
-          class = "abd-filter-group",
-          downloadButton("baixar_filtrados", "Baixar filtrados (CSV)", class = "btn-primary w-100 mb-2"),
-          downloadButton("baixar_completo", "Baixar base completa (CSV)", class = "btn-outline-primary w-100")
-        )
-      ),
-
-      navset_tab(
-        nav_panel(
-          "Buscar",
-          div(class = "abd-eyebrow", textOutput("contagem", inline = TRUE)),
-          DTOutput("tabela")
-        ),
-        nav_panel(
-          "Sobre e metodologia",
-          div(class = "abd-article", includeMarkdown("www/sobre.md"))
-        )
-      )
-    ),
+    busca_ui("busca"),
 
     tags$footer(
       class = "abd-footer",
@@ -141,6 +51,29 @@ ui <- page_fluid(
       p(
         class = "abd-footer-line",
         "Dados: Banco de Teses e Dissertações da CAPES (1994-2024). Última atualização: 17 de agosto de 2026."
+      ),
+      div(
+        class = "abd-footer-links",
+        tags$a(
+          href = "mailto:rafaelcabral@ufersa.edu.br",
+          target = "_blank", title = "E-mail",
+          icon("envelope")
+        ),
+        tags$a(
+          href = "https://github.com/rafaellamera",
+          target = "_blank", rel = "noopener noreferrer", title = "GitHub",
+          icon("github")
+        ),
+        tags$a(
+          href = "https://orcid.org/0000-0002-6442-4924",
+          target = "_blank", rel = "noopener noreferrer", title = "ORCID",
+          icon("id-badge")
+        ),
+        tags$a(
+          href = "http://lattes.cnpq.br/8035594335420500",
+          target = "_blank", rel = "noopener noreferrer", title = "Lattes",
+          icon("file-lines")
+        )
       )
     )
   )
