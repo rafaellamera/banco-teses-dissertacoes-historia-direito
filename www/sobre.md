@@ -10,15 +10,35 @@ qual cada trabalho foi avaliado quanto à sua pertinência ao campo da História
 Direito. A coluna de confiança de classificação (0 a 10) e a justificativa
 correspondente, quando exibidas, registram esse processo.
 
-[preencher: descrição da chave/protocolo de classificação usado para decidir se um
-trabalho é ou não "História do Direito" — critérios adotados, quem classificou,
-se houve revisão cruzada, etc.]
+A classificação segue os critérios epistemológicos de Pietro Costa e Ricardo Marcelo
+Fonseca, que distinguem a História do Direito propriamente dita — trabalhos que tomam
+o passado como objeto autônomo, com fonte histórica, período datado e método
+historiográfico — de escorços históricos, nos quais o passado funciona apenas como
+pano de fundo de uma discussão sobre o direito vigente. Cada trabalho pré-selecionado
+pelo filtro lexical (ver "Fonte dos dados", abaixo) é avaliado por um classificador
+baseado em indicadores léxico-sintáticos ponderados (menção a fontes primárias,
+arquivos, períodos históricos datados, historiografia, entre outros), que atribui uma
+pontuação de confiança de 0 a 10 e registra, no campo "justificativa" (visível ao
+marcar "Mostrar metadados de classificação"), a fundamentação da decisão. Os casos de
+confiança mais baixa ou ambígua são revisados manualmente por leitura direta de título
+e resumo. Os 420 registros deste banco correspondem aos trabalhos confirmados como
+História do Direito ao final desse processo; o protocolo completo de seleção e
+classificação está descrito no projeto de pesquisa financiado pelo CNPq (2025-2028) e
+será publicado como artigo metodológico.
 
 ## Fonte dos dados
 
-[preencher: fonte primária dos registros — Catálogo de Teses e Dissertações da CAPES,
-Biblioteca Digital Brasileira de Teses e Dissertações (BDTD), repositórios
-institucionais, ou combinação de fontes — e período de coleta]
+Banco de Teses e Dissertações da CAPES, área de avaliação Direito (Ciências Sociais
+Aplicadas), recorte 1994-2024. A partir de um universo de aproximadamente 68 mil
+registros nessa área, um primeiro filtro lexical — ocorrência de "história",
+"historiografia", "historiográfico" e da expressão "história do direito" em título e
+resumo — selecionou o subconjunto submetido à classificação temática ("Corpus 1"). Uma
+segunda rodada de busca, orientada pelo descritor "cultura jurídica" (identificado, na
+análise de descritores do projeto, como de alto poder discriminante para o campo),
+ampliou a seleção ("Corpus 2 - Cultura Jurídica"). A coluna `origem`, visível ao marcar
+"Mostrar metadados de classificação", preserva essa distinção. Levantamento realizado
+no âmbito do projeto de pesquisa "Trinta Anos de História do Direito no Brasil"
+(CNPq, 2025-2028), coordenado por Rafael Lamera Giesta Cabral (UFERSA).
 
 ## Cobertura
 
