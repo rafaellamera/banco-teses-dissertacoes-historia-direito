@@ -72,6 +72,7 @@ h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; }
   font-style: italic;
   color: var(--abd-ink-muted);
   margin-top: 0.3rem;
+  text-align: center;
 }
 
 @media (max-width: 576px) {
