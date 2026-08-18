@@ -32,6 +32,13 @@ lista_uf        <- sort(unique(corpus$uf))
 
 n_total <- nrow(corpus)
 
+# Rótulos do checkbox de Região com contagem, para exibição inicial
+# (recalculados dinamicamente pelo mod_busca.R conforme os demais filtros).
+regiao_choices_iniciais <- setNames(
+  lista_regiao,
+  sprintf("%s (%d)", lista_regiao, as.integer(table(factor(corpus$regiao, levels = lista_regiao))))
+)
+
 # --- Módulos -------------------------------------------------------------
 source("R/mod_busca.R")
 source("R/mod_contribuicao.R")

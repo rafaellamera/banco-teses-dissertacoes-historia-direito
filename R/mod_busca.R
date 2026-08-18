@@ -43,7 +43,7 @@ busca_ui <- function(id) {
       div(
         class = "abd-filter-group",
         span(class = "abd-filter-label", "Localização"),
-        checkboxGroupInput(ns("f_regiao"), "Região", choices = lista_regiao, selected = lista_regiao),
+        checkboxGroupInput(ns("f_regiao"), "Região", choices = regiao_choices_iniciais, selected = lista_regiao),
         selectizeInput(
           ns("f_uf"), "UF",
           choices = lista_uf, multiple = TRUE,
@@ -91,10 +91,10 @@ busca_ui <- function(id) {
 busca_server <- function(id) {
   moduleServer(id, function(input, output, session) {
 
-    # --- Reativo central: aplica todos os filtros em sequencia -----------
-    dados_filtrados <- reactive({
-      df <- corpus
-
+    # --- Aplica os filtros em sequencia sobre um data frame base ----------
+    # incluir_regiao = FALSE permite calcular, para o contador da Região,
+    # quantos registros restariam sem o proprio filtro de Região aplicado.
+    aplicar_filtros <- function(df, incluir_regiao = TRUE) {
       df <- df |> filter(ano_base >= input$f_ano[1], ano_base <= input$f_ano[2])
 
       if (length(input$f_tipo) > 0) {
@@ -111,10 +111,12 @@ busca_server <- function(id) {
         df <- df |> filter(ies %in% input$f_ies)
       }
 
-      if (length(input$f_regiao) > 0) {
-        df <- df |> filter(regiao %in% input$f_regiao)
-      } else {
-        df <- df[0, ]
+      if (incluir_regiao) {
+        if (length(input$f_regiao) > 0) {
+          df <- df |> filter(regiao %in% input$f_regiao)
+        } else {
+          df <- df[0, ]
+        }
       }
 
       if (length(input$f_uf) > 0) {
@@ -149,6 +151,32 @@ busca_server <- function(id) {
       }
 
       df
+    }
+
+    # --- Reativo central: aplica todos os filtros, inclusive Região ------
+    dados_filtrados <- reactive({
+      aplicar_filtros(corpus, incluir_regiao = TRUE)
+    })
+
+    # --- Reativo auxiliar: aplica tudo MENOS Região, para o contador -----
+    # do proprio filtro de Região. Debounced para nao recalcular a cada
+    # tecla digitada nos campos de busca textual.
+    dados_sem_regiao <- reactive({
+      aplicar_filtros(corpus, incluir_regiao = FALSE)
+    }) |> debounce(300)
+
+    # --- Atualiza os rotulos do checkbox de Região com contagem ao vivo --
+    observe({
+      contagens <- table(factor(dados_sem_regiao()$regiao, levels = lista_regiao))
+      novos_choices <- setNames(
+        lista_regiao,
+        sprintf("%s (%d)", lista_regiao, as.integer(contagens[lista_regiao]))
+      )
+      updateCheckboxGroupInput(
+        session, "f_regiao",
+        choices = novos_choices,
+        selected = isolate(input$f_regiao)
+      )
     })
 
     # --- Botao "Limpar filtros" --------------------------------------------
