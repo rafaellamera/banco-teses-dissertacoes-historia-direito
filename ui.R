@@ -1,23 +1,11 @@
 # ui.R
 
 ui <- page_fluid(
-  theme = bs_theme(
-    version = 5,
-    base_font = font_google("Libre Franklin"),
-    heading_font = font_google("Source Serif 4")
-  ),
+  theme = bs_theme(version = 5),
   title = "Banco de Teses e Dissertações - História do Direito",
   padding = 0,
 
   tags$head(
-    tags$link(rel = "preconnect", href = "https://fonts.googleapis.com"),
-    tags$link(
-      rel = "stylesheet",
-      href = paste0(
-        "https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700",
-        "&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
-      )
-    ),
     tags$link(rel = "stylesheet", href = "styles.css")
   ),
 

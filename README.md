@@ -60,7 +60,9 @@ shiny::runApp()
 ├── scripts/
 │   └── prepare_data.R     # pipeline de limpeza: xlsx -> csv
 ├── www/
-│   └── sobre.md            # conteúdo da aba "Sobre e metodologia"
+│   ├── sobre.md            # conteúdo da aba "Sobre e metodologia"
+│   ├── styles.css          # identidade visual
+│   └── fonts/              # Libre Franklin e Source Serif 4 (.woff2, locais)
 ├── LICENSE
 └── README.md
 ```
@@ -100,25 +102,19 @@ Times como referência), sem reproduzir marca ou fonte proprietária de terceiro
 
 - **Cor:** tinta `#121212`, papel `#fbfaf7`, papel-secundário `#f1ede3`, fio `#d9d2c2`,
   vermelho-selo `#9a2020` (uso restrito a kicker, botão primário e seleção).
-- **Tipografia:** Libre Franklin (Google Fonts, mesma linhagem tipográfica — Franklin
-  Gothic — da fonte proprietária usada pelo NYT) para interface e tabela; Source
-  Serif 4 (Google Fonts) para masthead, título de registro e corpo do resumo.
-- **Assinatura:** ao selecionar um registro na tabela, ele abre como uma "matéria"
-  (kicker com IES/programa, título, linha de autoria/orientação, linha de data,
-  resumo com capitular), definido em `www/styles.css` (classes `.abd-record-*`) e
-  montado em `server.R` (`output$detalhe`).
+- **Tipografia:** Libre Franklin (mesma linhagem tipográfica — Franklin Gothic — da
+  fonte proprietária usada pelo NYT) para interface e tabela; Source Serif 4 para
+  masthead, título de registro e corpo do resumo. Ambas variable fonts, arquivos
+  `.woff2` embutidos em `www/fonts/` (baixados uma vez do Google Fonts, subconjunto
+  latin) — o app roda sem acesso à internet no navegador, exceto para o mapa de
+  ícones (Font Awesome, empacotado com o `shiny`, também local).
+- **Assinatura:** ao selecionar um registro na tabela, ele abre em um modal como uma
+  "matéria" (kicker com IES/programa, título, linha de autoria/orientação, linha de
+  data, resumo com capitular), definido em `www/styles.css` (classes `.abd-record-*`)
+  e montado em `R/mod_busca.R`.
 
-Ambas as fontes são carregadas via Google Fonts (`ui.R`), o que exige acesso à
-internet no navegador de quem usa o app; não é necessário instalar nada em R para
-isso.
-
-**Aviso de verificação:** o ambiente usado para gerar este projeto não tem R
-instalado, então o CSS foi escrito mas não pôde ser visualmente conferido rodando o
-app de fato. Os seletores usados para o fundo da barra lateral (`.bslib-sidebar-layout
-> .sidebar` e variantes) cobrem as versões mais comuns do bslib, mas se a cor de fundo
-da barra lateral não aparecer ao rodar localmente, abra o DevTools do navegador,
-identifique a classe real do elemento `<aside>` gerado e ajuste esse seletor em
-`www/styles.css`.
+Identidade visual verificada rodando o app de fato no navegador: fundo da barra
+lateral, tipografia e o modal de detalhe conferidos visualmente.
 
 ## Licença
 
