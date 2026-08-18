@@ -14,7 +14,7 @@ ui <- page_fluid(
 
     div(
       class = "abd-masthead",
-      span(class = "abd-kicker", "Observatório dos Direitos Sociais do Semiárido · PPGD-UFERSA"),
+      span(class = "abd-kicker", "Observatório dos Direitos Sociais do Semiárido · DATALAB-ODSS · PPGD-UFERSA"),
       h1(class = "abd-title", "Banco de Teses e Dissertações em História do Direito"),
       p(class = "abd-subtitle",
         sprintf("1994-2024 · %d registros de mestrado e doutorado em Programas de Pós-Graduação em Direito no Brasil", n_total)),

@@ -54,9 +54,9 @@ busca_ui <- function(id) {
       div(
         class = "abd-filter-group",
         span(class = "abd-filter-label", "Busca textual"),
-        textInput(ns("f_titulo"), "Título contém"),
-        textInput(ns("f_autoria"), "Autoria contém"),
-        textInput(ns("f_orientacao"), "Orientação contém"),
+        textInput(ns("f_titulo"), "Título"),
+        textInput(ns("f_autoria"), "Autoria"),
+        textInput(ns("f_orientacao"), "Orientador(a)"),
         textInput(ns("f_assunto"), "Assunto (resumo e título)")
       ),
 
