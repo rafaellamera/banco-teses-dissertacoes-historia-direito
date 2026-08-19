@@ -25,9 +25,9 @@ O marco inicial de 1994 é importante por ser o primeiro momento de indução do
 
 Com esse corpus, aplicamos um filtro sobre títulos e resumos (os únicos dados extraídos diretamente do conteúdo das pesquisas e disponíveis na Plataforma Sucupira), com o uso de quatro descritores: história, historiografia, historiográfico e cultura jurídica. A partir desse filtro, o corpus foi reduzido para 4.246 produtos.
 
-A segunda etapa consistiu em qualificar, de forma automatizada, o que é história do direito e como o campo se organiza, a fim de identificar quais pesquisas deveriam ser selecionadas. Essa etapa foi coliderada pelo Prof. Dr. Ulisses Levy Silvério dos Reis (PPGD-UFERSA), especialista em ciência de dados aplicada ao Direito. Os índices de confiabilidade variaram de 5 a 9 e foram validados manualmente pelo pesquisador.
+A segunda etapa consistiu em qualificar, de forma automatizada, o que é história do direito e como o campo se organiza, a fim de identificar quais pesquisas deveriam ser selecionadas. Essa etapa foi coliderada pelo Prof. Dr. Ulisses Levy Silvério dos Reis (PPGD-UFERSA), especialista em ciência de dados aplicada ao Direito. Os índices de confiabilidade variaram de 5 a 10 e foram validados manualmente pelo pesquisador.
 
-O resultado inicial compreende 420 teses e dissertações. Para mais detalhes, veja a aba "Sobre e metodologia" dentro do aplicativo.
+O resultado inicial compreende 420 teses e dissertações. Para mais detalhes, veja a aba "Sobre a metodologia" dentro do aplicativo.
 
 ## Reprodução local
 
@@ -128,7 +128,7 @@ lateral, tipografia e o modal de detalhe conferidos visualmente.
 
 ## Agradecimentos
 
-Esse projeto foi possível a partir da integração e apoio dos pesquisadores do [Observatório dos Direitos Sociais do Semiárido] (www.odss.ufersa.edu.br) e do Projeto DATALAB-ODSS, que inova no uso de tecnologias aplicadas para o Direito. 
+Esse projeto foi possível a partir da integração e apoio dos pesquisadores do [Observatório dos Direitos Sociais do Semiárido](https://www.odss.ufersa.edu.br) e do Projeto DATALAB-ODSS, que inova no uso de tecnologias aplicadas para o Direito.
 
 ## Licença
 
