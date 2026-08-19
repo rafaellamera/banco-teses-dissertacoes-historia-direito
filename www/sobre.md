@@ -63,7 +63,8 @@ completa, podem ser baixados em CSV.
 
 > CABRAL, Rafael Lamera Giesta. *Banco de Teses e Dissertações em História do Direito
 > (1994-2024)*. Aplicativo Shiny interativo. Observatório dos Direitos Sociais do
-> Semiárido / DATALAB-ODSS / PPGD-UFERSA, 2026. Disponível em: <[URL após deploy]>.
+> Semiárido / DATALAB-ODSS / PPGD-UFERSA, 2026. Disponível em:
+> <https://rafaellamera.shinyapps.io/banco-teses-dissertacoes-historia-direito/>.
 > Acesso em: [data].
 
 ## Licença

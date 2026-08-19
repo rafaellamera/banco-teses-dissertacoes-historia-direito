@@ -6,7 +6,7 @@ entre 1994 e 2024.
 
 ## Acesso ao aplicativo
 
-[preencher após o deploy: link do shinyapps.io]
+🔗 [Acesse o Banco de Teses e Dissertações em História do Direito clicando aqui](https://rafaellamera.shinyapps.io/banco-teses-dissertacoes-historia-direito/)
 
 ## O que você pode fazer
 
