@@ -31,7 +31,7 @@ ui <- page_fluid(
         class = "abd-footer-line",
         "Desenvolvido por Rafael Lamera Giesta Cabral · UFERSA · Código aberto · Projeto disponível no ",
         tags$a(
-          href = "https://github.com/rafaellamera/banco-teses-historia-direito",
+          href = "https://github.com/rafaellamera/banco-teses-dissertacoes-historia-direito",
           target = "_blank", rel = "noopener noreferrer",
           "GitHub"
         )
