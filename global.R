@@ -8,6 +8,10 @@ library(DT)
 library(dplyr)
 library(readr)
 library(stringr)
+# Exigido por shiny::includeMarkdown() (aba "Sobre a metodologia"). Nunca chamado
+# diretamente no código, então precisa de library() explícito para que o rsconnect
+# detecte a dependência e instale no servidor (ver deploy no shinyapps.io).
+library(markdown)
 
 # --- Dados -------------------------------------------------------------
 # CSV produzido por scripts/prepare_data.R a partir da planilha original.
