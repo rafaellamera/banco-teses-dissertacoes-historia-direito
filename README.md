@@ -6,7 +6,7 @@ entre 1994 e 2024.
 
 ## Acesso ao aplicativo
 
-🔗 [Acesse o Banco de Teses e Dissertações em História do Direito clicando aqui](https://rafaellamera.shinyapps.io/banco-teses-dissertacoes-historia-direito/)
+🔗 [Banco de Teses e Dissertações em História do Direito](https://rafaellamera.shinyapps.io/banco-teses-dissertacoes-historia-direito/)
 
 ## O que você pode fazer
 
@@ -17,7 +17,17 @@ completa em CSV.
 
 ## Fonte dos dados
 
-Ver aba "Sobre a metodologia" dentro do aplicativo.
+Os dados sobre teses e dissertações da CAPES são públicos e estão disponíveis na Plataforma Sucupira. A seleção de teses e dissertações na área da História do Direito foi organizada a partir de algumas etapas.
+
+A primeira consistiu em selecionar, dentro do corpus principal, os produtos vinculados a programas de pós-graduação exclusivamente da área do Direito na CAPES; programas interdisciplinares não foram incluídos. No recorte temporal do projeto de pesquisa, foram selecionadas 68.108 teses e dissertações da área do Direito.
+
+O marco inicial de 1994 é importante por ser o primeiro momento de indução do conteúdo de História do Direito na estrutura curricular dos cursos de Direito no Brasil. O ano de 2024 fecha os 30 anos de manutenção do conteúdo de História do Direito nos componentes curriculares dos cursos de Direito e corresponde também aos últimos dados disponíveis na Plataforma Sucupira em março de 2026, época do levantamento.
+
+Com esse corpus, aplicamos um filtro sobre títulos e resumos (os únicos dados extraídos diretamente do conteúdo das pesquisas e disponíveis na Plataforma Sucupira), com o uso de quatro descritores: história, historiografia, historiográfico e cultura jurídica. A partir desse filtro, o corpus foi reduzido para 4.246 produtos.
+
+A segunda etapa consistiu em qualificar, de forma automatizada, o que é história do direito e como o campo se organiza, a fim de identificar quais pesquisas deveriam ser selecionadas. Essa etapa foi coliderada pelo Prof. Dr. Ulisses Levy Silvério dos Reis (PPGD-UFERSA), especialista em ciência de dados aplicada ao Direito. Os índices de confiabilidade variaram de 5 a 9 e foram validados manualmente pelo pesquisador.
+
+O resultado inicial compreende 420 teses e dissertações. Para mais detalhes, veja a aba "Sobre e metodologia" dentro do aplicativo.
 
 ## Reprodução local
 
@@ -116,10 +126,14 @@ Times como referência), sem reproduzir marca ou fonte proprietária de terceiro
 Identidade visual verificada rodando o app de fato no navegador: fundo da barra
 lateral, tipografia e o modal de detalhe conferidos visualmente.
 
+## Agradecimentos
+
+Esse projeto foi possível a partir da integração e apoio dos pesquisadores do [Observatório dos Direitos Sociais do Semiárido] (www.odss.ufersa.edu.br) e do Projeto DATALAB-ODSS, que inova no uso de tecnologias aplicadas para o Direito. 
+
 ## Licença
 
 [MIT](LICENSE).
 
 ## Como citar
 
-Ver aba "Sobre a metodologia" dentro do aplicativo.
+CABRAL, Rafael Lamera Giesta. Banco de Teses e Dissertações em História do Direito (1994-2024). Aplicativo Shiny interativo. Observatório dos Direitos Sociais do Semiárido / DATALAB-ODSS / PPGD-UFERSA, 2026. Disponível em: https://rafaellamera.shinyapps.io/banco-teses-dissertacoes-historia-direito/. Acesso em: [data].
