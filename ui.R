@@ -25,6 +25,7 @@ ui <- page_fluid(
 
     navset_tab(
       nav_panel("Buscar", busca_ui("busca")),
+      nav_panel("Gráficos", graficos_ui("graficos")),
       nav_panel("Rede de Orientação", rede_ui("rede")),
       nav_panel(
         "Sobre a metodologia",

@@ -18,6 +18,11 @@ library(markdown)
 # acima se aplica: sem chamada explícita, o rsconnect não detecta a dependência.
 library(visNetwork)
 library(igraph)
+# Usados pelo módulo de gráficos (R/mod_graficos.R): ggplot2 para montar os
+# gráficos, svglite só para o download em SVG (ggsave chama o pacote por
+# baixo dos panos quando device="svg", sem library() explícito aqui).
+library(ggplot2)
+library(svglite)
 
 # --- Dados -------------------------------------------------------------
 # CSV produzido por scripts/prepare_data.R a partir da planilha original.
@@ -78,3 +83,4 @@ rede_nos <- rede_nos |>
 source("R/mod_busca.R")
 source("R/mod_contribuicao.R")
 source("R/mod_rede.R")
+source("R/mod_graficos.R")
