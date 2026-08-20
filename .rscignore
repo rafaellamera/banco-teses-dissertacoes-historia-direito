@@ -1,7 +1,14 @@
-.git/
+.git
 banco-teses-historia-direito.zip
 
 # Figuras estaticas (PNG/PDF) para uso em artigo, geradas por
 # scripts/plot_network.R. Nao sao lidas pelo app em runtime, so
 # inflariam o bundle do shinyapps.io.
-figuras/
+#
+# ATENCAO: rsconnect:::ignoreBundleFiles() compara cada linha deste arquivo
+# de forma EXATA e LITERAL contra list.files() — sem suporte a "/" final,
+# sem glob, sem wildcard. Uma entrada de diretorio deve ser escrita SEM
+# barra no final (list.files() nunca inclui a barra), senao a exclusao e
+# silenciosamente ignorada (foi o que aconteceu aqui: "figuras/" nunca
+# excluiu nada, so descoberto ao inspecionar o bundle publicado).
+figuras
