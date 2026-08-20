@@ -1,2 +1,7 @@
 .git/
 banco-teses-historia-direito.zip
+
+# Figuras estaticas (PNG/PDF) para uso em artigo, geradas por
+# scripts/plot_network.R. Nao sao lidas pelo app em runtime, so
+# inflariam o bundle do shinyapps.io.
+figuras/

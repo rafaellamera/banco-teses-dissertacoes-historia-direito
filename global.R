@@ -12,6 +12,12 @@ library(stringr)
 # diretamente no código, então precisa de library() explícito para que o rsconnect
 # detecte a dependência e instale no servidor (ver deploy no shinyapps.io).
 library(markdown)
+# Usados pelo módulo de rede de orientação (R/mod_rede.R): visNetwork para o
+# grafo interativo, igraph só para calcular o layout (posição x/y de cada nó)
+# uma única vez aqui, na inicialização — o mesmo motivo do library(markdown)
+# acima se aplica: sem chamada explícita, o rsconnect não detecta a dependência.
+library(visNetwork)
+library(igraph)
 
 # --- Dados -------------------------------------------------------------
 # CSV produzido por scripts/prepare_data.R a partir da planilha original.
@@ -43,6 +49,32 @@ regiao_choices_iniciais <- setNames(
   sprintf("%s (%d)", lista_regiao, as.integer(table(factor(corpus$regiao, levels = lista_regiao))))
 )
 
+# --- Rede de orientação (genealogia acadêmica) --------------------------
+# CSVs produzidos por scripts/build_network.R a partir do corpus acima
+# (ver esse script para a metodologia de normalização de nomes e as
+# decisões confirmadas sobre coorientação/duplicatas de grafia).
+rede_nos     <- read_csv("data/rede_orientacao_nos.csv", show_col_types = FALSE)
+rede_arestas <- read_csv("data/rede_orientacao_arestas.csv", show_col_types = FALSE)
+faixa_anos_rede <- range(rede_arestas$ano_base, na.rm = TRUE)
+
+# Layout (posição x/y de cada nó) calculado uma única vez sobre o grafo
+# completo, para que a posição de cada pessoa fique estável enquanto o
+# slider de ano cumulativo (mod_rede.R) vai revelando mais nós — sem isso,
+# a rede "pularia" a cada mudança de ano em vez de crescer visivelmente.
+grafo_rede_completo <- graph_from_data_frame(
+  d = rede_arestas |> select(orientador, orientando),
+  vertices = rede_nos |> select(nome_canonico),
+  directed = TRUE
+)
+set.seed(42) # mesma semente do script estático (scripts/plot_network.R)
+coords_rede <- layout_with_fr(grafo_rede_completo) * 60
+rede_nos <- rede_nos |>
+  mutate(
+    layout_x = coords_rede[match(nome_canonico, V(grafo_rede_completo)$name), 1],
+    layout_y = coords_rede[match(nome_canonico, V(grafo_rede_completo)$name), 2]
+  )
+
 # --- Módulos -------------------------------------------------------------
 source("R/mod_busca.R")
 source("R/mod_contribuicao.R")
+source("R/mod_rede.R")

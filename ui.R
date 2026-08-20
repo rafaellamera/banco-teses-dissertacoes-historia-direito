@@ -23,7 +23,14 @@ ui <- page_fluid(
 
     contribuicao_ui("contribuicao"),
 
-    busca_ui("busca"),
+    navset_tab(
+      nav_panel("Buscar", busca_ui("busca")),
+      nav_panel("Rede de Orientação", rede_ui("rede")),
+      nav_panel(
+        "Sobre a metodologia",
+        div(class = "abd-article", includeMarkdown("www/sobre.md"))
+      )
+    ),
 
     tags$footer(
       class = "abd-footer",

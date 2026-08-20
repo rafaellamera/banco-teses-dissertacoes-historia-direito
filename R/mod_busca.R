@@ -74,16 +74,9 @@ busca_ui <- function(id) {
       )
     ),
 
-    navset_tab(
-      nav_panel(
-        "Buscar",
-        div(class = "abd-eyebrow", textOutput(ns("contagem"), inline = TRUE)),
-        DTOutput(ns("tabela"))
-      ),
-      nav_panel(
-        "Sobre a metodologia",
-        div(class = "abd-article", includeMarkdown("www/sobre.md"))
-      )
+    div(
+      div(class = "abd-eyebrow", textOutput(ns("contagem"), inline = TRUE)),
+      DTOutput(ns("tabela"))
     )
   )
 }
